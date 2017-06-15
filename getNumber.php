@@ -9,7 +9,7 @@ $fp = fopen("OTPList", "r+") or die("Unable to open file!");
 $otplist = file_get_contents("OTPList");
 $first_otp = substr($otplist, 0, 6);
 echo $first_otp;
-file_put_contents("requestQueue", substr($otplist, 6 + 1));
+file_put_contents("OTPList", substr($otplist, 6 + 1));
 fclose($fp);
 $fp = fopen("OTPList","a") or die("Unable to open file!");
 $first_otp=$first_otp.PHP_EOL;
