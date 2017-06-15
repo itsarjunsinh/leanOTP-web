@@ -15,4 +15,8 @@ $fp = fopen("OTPList","a") or die("Unable to open file!");
 $first_otp=$first_otp.PHP_EOL;
 fwrite($fp,$first_otp);
 fclose($fp);
+$first_num=$first_num.PHP_EOL;
+$fp = fopen('processedStack', 'a');
+fwrite($fp, $first_num);
+fclose($fp);
 ?>
