@@ -15,8 +15,7 @@ if($_GET[deliverykey] === $DELIVERY_KEY) {
   file_put_contents("OTPList", substr($otplist, 6 + 1));
   fclose($fp);
   $fp = fopen("OTPList","a") or die("Unable to open file!");
-  $first_otp=$first_otp.PHP_EOL;
-  fwrite($fp,$first_otp);
+  fwrite($fp,$first_otp.PHP_EOL);
   fclose($fp);
 
   //Add Number & OTP to processed stack.
