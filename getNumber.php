@@ -19,8 +19,11 @@ if($_GET[deliverykey] === $DELIVERY_KEY) {
   fwrite($fp,$first_otp);
   fclose($fp);
   $first_num=$first_num.PHP_EOL;
-  $fp = fopen('processedStack', 'a');
+  $fp = fopen('processedNumStack', 'a');
   fwrite($fp, $first_num);
+  fclose($fp);
+  $fp = fopen('processedOTPStack', 'a');
+  fwrite($fp, $first_otp);
   fclose($fp);
 }
 else {
