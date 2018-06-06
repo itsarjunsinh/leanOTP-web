@@ -18,13 +18,14 @@ if($_GET[deliverykey] === $DELIVERY_KEY) {
   $first_otp=$first_otp.PHP_EOL;
   fwrite($fp,$first_otp);
   fclose($fp);
+
+  //Add Number & OTP to processed stack.
   $first_num=$first_num.PHP_EOL;
-  $fp = fopen('processedNumStack', 'a');
-  fwrite($fp, $first_num);
-  fclose($fp);
-  $fp = fopen('processedOTPStack', 'a');
-  fwrite($fp, $first_otp);
-  fclose($fp);
+  $first_num .= file_get_contents('processedNumStack');
+  file_put_contents('processedNumStack', $first_num);
+  $first_otp=$first_otp.PHP_EOL;
+  $first_otp .= file_get_contents('processedOTPStack');
+  file_put_contents('processedOTPStack', $first_otp);
 }
 else {
   echo "Access Denied.";
