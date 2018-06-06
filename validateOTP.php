@@ -14,7 +14,7 @@ if($_GET[clientkey] === $CLIENT_KEY) {
     $otps = file(processedOTPStack);
 
     if(($otp === $otps[$pos]) && ($num === $nnumbers[$pos])){
-      echo "True"
+      echo "True";
     } else {
       echo "False";
     }
